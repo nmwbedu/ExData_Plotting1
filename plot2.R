@@ -1,4 +1,4 @@
-#plot1
+#plot2
 
 # Download the data and unzip it
 download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", destfile = "power_consumption.zip")
@@ -12,5 +12,5 @@ DF$datetime <- strptime(paste(DF$Date, DF$Time), "%d/%m/%Y %H:%M:%S")
 
 # Create the plot as png and save it
 png(filename = "plot2.png")
-hist(DF$Global_active_power, col="red", xlab = "Global Active Power (kilowatts)", ylab = "Frequency", main = "Global Active Power")
+plot(DF$datetime, DF$Global_active_power, type = "l", lty=1, xlab="", ylab="Global Active Power (kilowatts)")
 dev.off()
